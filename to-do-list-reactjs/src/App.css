@@ -1,3 +1,40 @@
 body {
     background-color: #009977;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    margin-top: 100px;
+}
+
+.list-title {
+    color: #fff;
+    text-align: center;
+}
+
+button {
+    width: 75px;
+    height: 31px;
+    background-color: blueviolet;
+    border: none;
+    color: #fff;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+button:hover {
+    letter-spacing: 1px;
+    background-color: aquamarine;
+    cursor: pointer;
+    height: 30px;
+}
+
+input {
+    height: 25px;
+    text-align: center;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
 }

@@ -98,8 +98,8 @@ export default class App extends Component {
     const { data } = this.state;
 
     return (
-      <div style={{backgroundColor: '#009977', fontFamily: 'sans-serif'}}>
-        <ul>
+      <div className="container">
+        <ul className="list-title">
           {data.length <= 0 ? 'THE LIST IS EMPTY!!' : data.map((dat) => (
             <li style={{padding: 10}} key={data.message}>
               <span style={{color: 'gray'}}>id: </span> {data.id} <br />
@@ -108,6 +108,17 @@ export default class App extends Component {
           ))}
         </ul>
 
+        <div style={{padding: 10}}>
+            <input type="text" style={{width: 200}}
+              onChange={(e) => this.setState({
+                message: e.target.value
+              })}
+              placeholder="Add something.." />
+            <button onClick={() => this.putDataToDB(this.state.message)}>
+              ADD
+            </button>
+        </div>
+          
         <div style={{padding: 10}}>
             <input type="text" style={{width: 200}}
               onChange={(e) => this.setState({
@@ -120,7 +131,25 @@ export default class App extends Component {
         </div>
 
         <div style={{padding: 10}}>
-              hello
+        <input
+            type="text"
+            style={{ width: '200px' }}
+            onChange={(e) => this.setState({ idToUpdate: e.target.value })}
+            placeholder="id of item to update here"
+          /> <br />
+          <input
+            type="text"
+            style={{ width: '200px', marginTop: 5 }}
+            onChange={(e) => this.setState({ updateToApply: e.target.value })}
+            placeholder="put new value of the item here"
+          /> 
+          <button
+            onClick={() =>
+              this.updateDB(this.state.idToUpdate, this.state.updateToApply)
+            }
+          >
+            UPDATE
+          </button>
         </div>
 
       </div>
